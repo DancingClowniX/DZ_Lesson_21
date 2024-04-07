@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+</head>
+<body>
+{% block main_content %}
+<h1>{{title}}</h1>
+<h2><a href='..'>Главная </a><a href='/galery/nighthawks/'>Полуночники</a> <a href='/galery/mona_lisa/'>Мона лиза</a></h2>
+<ul>
+    {% for item in list%}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+{% if title == "Nighthawks" %}
+   <div>
+        <p>Название: {{ title }}</p>
+        <img class="night" src="{% static 'img/Nighthawks.jpg' %}" width="700" height="400">
+        <p>Описание: {{ contents }}</p>
+        <p>Цена: {{ price }}</p>
+   </div>
+{% elif title == "Mona lisa" %}
+    <div>
+        <p>Название: {{ title }}</p>
+        <img src="{% static 'img/monaLisa.jpg' %}" width="300" height="400">
+        <p>Описание: {{ contents }}</p>
+        <p>Цена: {{ price }}</p>
+   </div>
+{% endif %}
+{% endblock main_content %}
+</body>
+</html>

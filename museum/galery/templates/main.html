@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+<link rel= stylesheet href="{% static 'css/styleGeneral.css' %}">
+</head>
+{% block main_content %}
+<body>
+
+
+<div class="header">
+<h2><a href=''>Главная </a><a href='/galery/nighthawks/'>Полуночники </a> <a href='/galery/mona_lisa/'>Мона лиза</a></h2></div>
+<h3>Привет дорогой ценитель искусства!</h3>
+<h4>Преимущества нашей галереи</h4>
+
+    <ul class="arts">
+        {% for items in content %}
+            <li>{{ items }}</li>
+        {% endfor %}
+    </ul>
+{% endblock main_content %}
+</body>
+</html>
